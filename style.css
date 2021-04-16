@@ -1,0 +1,154 @@
+*{
+    margin:0;
+    padding:0;
+    color:hsl(240, 38%, 20%);
+    font-family: 'Inter', sans-serif;
+}
+html, body{
+    height:100%;
+    overflow:visible;
+}
+.presentacion{
+    background-image: url("images/pattern-curve.svg");
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    padding:0;
+    height:100%;
+}
+
+.imagenes{
+    background-image: url("images/pattern-bg.svg");
+    background-repeat:no-repeat;
+    background-size: contain;
+    background-position:top left;
+    width:120%;
+    grid-column: 2/2;
+}
+
+.imagenInner{
+    width: 60%;
+    height: 80%;
+    padding:7% 3%;
+}
+
+#slide1, #slide2{
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin:5%;
+}
+
+.texto{
+    grid-column: 1/2;
+    position:absolute;
+    background-image: url("images/pattern-quotes.svg");
+    background-repeat: no-repeat;
+    background-position: top;
+    font-size: 32px;
+    width:50%;
+    height:30%;
+    padding:5%;
+    top:20%;
+    text-align:left;
+}
+
+p{
+    padding-top: 10px;
+    font-size: 20px;
+}
+
+.nombre{
+    font-weight: 700;
+}
+
+.titulo{
+    color:hsl(240, 18%, 77%);
+}
+
+#botones{
+    margin-top:-85px;
+    grid-column: 2/2;
+    background-color:white;
+    border-radius:25px;
+    width:60px;
+    height:40px;
+    padding: 3px 10px;
+    box-shadow: 1px 1px 15px darkgrey;
+    margin-left: 30%;
+}
+
+#prev, #next{
+    padding: 10px 7px;
+}
+
+#prev:hover, #next:hover{
+    cursor:pointer;
+}
+
+#slide2{
+    display:none;
+}
+
+@media (max-width:1100px){
+    .texto{
+        width:45%;
+        height:25%;
+    }
+    .imagenes{
+        margin-top:15%;
+    }
+}
+
+@media (max-width:900px){
+    .texto{
+        font-size:25px;
+        height:20%;
+    }
+    .imagenes{
+        margin-top:25%;
+        height: 100%;
+        width:100%;
+    }
+    .imagenInner{
+        width:80%;
+        height:70%;
+    }
+
+    #botones{
+        margin-top:-55px;
+    }
+}
+
+@media (max-width:600px){
+    #slide1, #slide2{
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: none;
+    height: 750px;
+    margin:0;
+    padding:0;
+    }
+    .imagenes{
+        grid-row: 1;
+        grid-column: 1;
+        width:65%;
+        height:100%;
+        margin: 0 17%;
+    }
+    .imagenInner{
+        margin:5%;
+    }
+    #botones{
+       grid-row: 2;
+       grid-column: 1;
+       margin:-15% 40% 0;
+    }
+    .texto{
+        grid-row:3;
+        position:unset;
+        width: 70%;
+        height:100%;
+        text-align: center;
+        margin:0 10%;
+        position:relative;
+        top:-5%;
+    }
+}
